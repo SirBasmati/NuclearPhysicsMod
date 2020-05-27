@@ -1,0 +1,28 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+    [
+        "TTT", 
+        "TDT",
+        "TTT"
+    ],
+    "key":
+    {
+        "T":
+        {
+            "item": "testmod:testitem" 
+        },
+        
+        "D":
+        {
+            "item": "minecraft:iron_block"
+        }
+        
+    },
+    "result":
+    {
+        "item": "testmod:test_block",
+        "count": 4 
+    }
+}
+   

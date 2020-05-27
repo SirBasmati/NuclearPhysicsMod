@@ -1,0 +1,17 @@
+//Items
+item.testitem.name=Test Item
+
+item.leadingot.name=Lead Ingot
+item.nickelingot.name=Nickel Ingot
+item.copperingot.name=Copper Ingot
+item.lithiumingot.name=Lithium Ingot
+
+//Blocks
+tile.test_ore.name=Test Ore
+tile.test_block.name=Test Block
+tile.copperore.name=Copper Ore
+tile.lithiumore.name=Lithium Ore
+tile.uraniumore.name=Uranium Ore
+tile.nickelore.name=Nickel Ore
+tile.leadore.name=Lead Ore
+

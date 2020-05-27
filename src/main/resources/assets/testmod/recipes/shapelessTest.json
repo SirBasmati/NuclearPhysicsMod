@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    
+    "ingredients":
+    [
+    
+    {
+        "item": "testmod:testitem"
+    },
+    
+    {
+        "item": "minecraft:diamond"
+    }
+    
+    ],
+    
+    "result":
+    {
+        "item": "testmod:test_block",
+        "count": 1
+    }    
+}

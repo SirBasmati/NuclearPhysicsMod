@@ -1,0 +1,11 @@
+Notes
+
+Version numbers is as follows
+
+<Major Version> <Minor Version> <Build Number>
+
+Where major version is incremented on a case-by-case basis, with it generally being a major change to last version
+
+Minor version is when a completed bug fix occurs or when there is feature enhancement
+
+Build Number is successful build with no completed bug fix or feature enhancement

@@ -1,0 +1,16 @@
+[
+{
+  "modid": "testmod",
+  "name": "Test Mod",
+  "description": "le test has arrived",
+  "version": "0.0.1",
+  "mcversion": "1",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Basmat_Kun"],
+  "credits": "me",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
