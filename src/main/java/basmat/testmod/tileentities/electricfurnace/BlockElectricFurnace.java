@@ -6,7 +6,7 @@ import basmat.testmod.Main;
 import basmat.testmod.blocks.BlockBase;
 import basmat.testmod.init.ModBlocks;
 import basmat.testmod.tileentities.blockcounter.TileEntityCounter;
-import basmat.testmod.tileentities.energy.TETestEnergyGenerator;
+import basmat.testmod.tileentities.generator.TETestEnergyGenerator;
 import basmat.testmod.util.Reference;
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.material.Material;

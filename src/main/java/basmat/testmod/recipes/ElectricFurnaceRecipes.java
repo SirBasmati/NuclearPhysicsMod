@@ -22,6 +22,7 @@ public class ElectricFurnaceRecipes {
 	
 	private ElectricFurnaceRecipes() {
 		addElectricFurnaceRecipes(new ItemStack(Blocks.ACACIA_FENCE), new ItemStack(Blocks.ACACIA_FENCE_GATE), new ItemStack(Blocks.ANVIL), 5.0F);
+		addElectricFurnaceRecipes(new ItemStack(Blocks.QUARTZ_BLOCK), new ItemStack(Blocks.NETHERRACK), new ItemStack(Blocks.DIAMOND_BLOCK), 5.0F);
 	}
 
 	public void addElectricFurnaceRecipes(ItemStack input1, ItemStack input2, ItemStack result, float experience) {

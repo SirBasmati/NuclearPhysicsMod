@@ -25,6 +25,7 @@ public class ModItems
 	public static ItemBase nickelingot = new ItemBase("nickelingot").setCreativeTab(CreativeTabs.MATERIALS);
 	public static ItemBase copperingot = new ItemBase("copperingot").setCreativeTab(CreativeTabs.MATERIALS);
 	public static ItemBase lithiumingot = new ItemBase("lithiumingot").setCreativeTab(CreativeTabs.MATERIALS);
+	public static ItemBase pulveriseduranium = new ItemBase("pulveriseduranium").setCreativeTab(CreativeTabs.MATERIALS);
 	
 	//Tools
 	//public static final ItemSword TESTITEM_SWORD = new ToolSword("testitem_sword", MATERIAL_TESTITEM).setCreativeTab(CreativeTabs.COMBAT);
@@ -35,7 +36,8 @@ public class ModItems
 				leadingot,
 				nickelingot,
 				copperingot,
-				lithiumingot
+				lithiumingot,
+				pulveriseduranium
 				);
 	}
 

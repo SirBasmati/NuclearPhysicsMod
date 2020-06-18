@@ -1,31 +1,27 @@
 package basmat.testmod.gui;
 
-import basmat.testmod.containers.ContainerTestGenerator;
-import basmat.testmod.init.ModBlocks;
-import basmat.testmod.tileentities.generator.TETestEnergyGenerator;
+import basmat.testmod.containers.ContainerCrusher;
+import basmat.testmod.tileentities.crusher.TileEntityCrusher;
 import basmat.testmod.util.Reference;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 
-public class GuiTestGenerator extends GuiContainer{
+public class GuiCrusher extends GuiContainer{
 	private InventoryPlayer player;
-	private final TETestEnergyGenerator tileentity;
-	private static final ResourceLocation BG_TEXTURE = new ResourceLocation(Reference.MOD_ID, "textures/gui/testgeneratorgui.png");
-
-	public GuiTestGenerator(InventoryPlayer player, TETestEnergyGenerator tileentity) {
-		super(new ContainerTestGenerator(player, tileentity));
+	private final TileEntityCrusher tileentity;
+	private static final ResourceLocation BG_TEXTURE = new ResourceLocation(Reference.MOD_ID, "textures/gui/crusher.png");
+	
+	public GuiCrusher(InventoryPlayer player, TileEntityCrusher tileentity) {
+		super(new ContainerCrusher(player, tileentity));
 		this.player = player;
 		this.tileentity = tileentity;
-		
 	}
-	
 	
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
-		GlStateManager.color(1.0f, 1.0f, 1.0f, 1.0f);
+		GlStateManager.clearColor(1.0f, 1.0f, 1.0f, 1.0f);
 		mc.getTextureManager().bindTexture(BG_TEXTURE);
 		int x = (width - xSize) / 2;
 		int y = (height - ySize) / 2;
@@ -43,16 +39,17 @@ public class GuiTestGenerator extends GuiContainer{
 	}
 	
 	private int getCookProgressScaled(int pixels) {
-		int i = this.tileentity.cookTime;
-		return i !=0 ? i * pixels / 25 : 0;
-	}
-
-	@Override
-	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-		String name = I18n.format(ModBlocks.test_block.getUnlocalizedName() + ".name");
-		fontRenderer.drawString(name, xSize / 2 - fontRenderer.getStringWidth(name) / 2, 6, 0x404040);
-		fontRenderer.drawString(player.getDisplayName().getUnformattedText(), 8, ySize - 94, 0x404040);
-		fontRenderer.drawString(Integer.toString(this.tileentity.getEnergyStored()), 115, 72, 4210752);
+		int i = this.tileentity.getField(2);
+		int j = this.tileentity.getField(3);
+		return j != 0 && i != 0 ? i * pixels / j : 0;
 	}
 	
+	@Override
+	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
+		String name = this.tileentity.getDisplayName().getUnformattedText();
+	
+		fontRenderer.drawString(name, (this.xSize / 2 - this.fontRenderer.getStringWidth(name) / 2) + 3, 8 , 4210752);
+		//fontRenderer.drawString(player.getDisplayName().getUnformattedText(), 122, this.ySize - 96 + 2, 4210752);	
+		fontRenderer.drawString(Integer.toString(this.tileentity.getEnergyStored()), 92, 72, 4210752);
+	}
 }

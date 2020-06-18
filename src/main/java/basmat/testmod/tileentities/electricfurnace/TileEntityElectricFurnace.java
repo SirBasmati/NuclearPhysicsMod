@@ -85,8 +85,7 @@ public class TileEntityElectricFurnace extends TileEntity implements ITickable
 		this.energy = compound.getInteger("Energy");
 		this.capacity = compound.getInteger("Capacity");
 		this.maxRecieve = compound.getInteger("MaxRecieve");
-		this.maxExtract = compound.getInteger("MaxExtract");
-		this.energy = compound.getInteger("GuiEnergy");
+		this.maxExtract = compound.getInteger("MaxExtract");	
 	}
 	
 	@Override
@@ -101,7 +100,6 @@ public class TileEntityElectricFurnace extends TileEntity implements ITickable
 		compound.setInteger("Capacity", this.capacity);
 		compound.setInteger("MaxExtract", this.maxExtract);
 		compound.setInteger("MaxRecieve", this.maxRecieve);
-		compound.setInteger("GuiEnergy", this.energy);
 		return compound;
 	
 	}
@@ -145,10 +143,6 @@ public class TileEntityElectricFurnace extends TileEntity implements ITickable
 							inputs[i].shrink(1);
 							handler.setStackInSlot(i, inputs[i]);
 						}
-						//inputs[0].shrink(1);
-						//inputs[1].shrink(1);
-						//handler.setStackInSlot(0, inputs[0]);
-						//handler.setStackInSlot(1, inputs[1]);
 						energy -= 20;
 					}
 				}
@@ -162,6 +156,7 @@ public class TileEntityElectricFurnace extends TileEntity implements ITickable
 			}
 		}
 	}
+	
 	public boolean isUsableByPlayer(EntityPlayer player) 
 	{
 		return this.world.getTileEntity(this.pos) != this ? false : player.getDistanceSq((double)this.pos.getX() + 0.5D, (double)this.pos.getY() + 0.5D, (double)this.pos.getZ() + 0.5D) <= 64.0D;

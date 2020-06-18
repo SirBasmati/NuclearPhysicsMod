@@ -3,6 +3,7 @@ package basmat.testmod.gui;
 import basmat.testmod.containers.ContainerElectricFurnace;
 import basmat.testmod.containers.ContainerTestGenerator;
 import basmat.testmod.init.ModBlocks;
+import basmat.testmod.tileentities.crusher.TileEntityCrusher;
 import basmat.testmod.tileentities.electricfurnace.TileEntityElectricFurnace;
 import basmat.testmod.util.Reference;
 import net.minecraft.client.gui.inventory.GuiContainer;
@@ -23,7 +24,8 @@ public class GuiElectricFurnace extends GuiContainer{
 		
 	}
 	
-	
+
+
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
 		GlStateManager.color(1.0f, 1.0f, 1.0f, 1.0f);

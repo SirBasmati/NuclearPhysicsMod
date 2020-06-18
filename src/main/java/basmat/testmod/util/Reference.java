@@ -11,4 +11,10 @@ public class Reference {
 	
 	public static final int GUI_TESTGENERATOR = 1;
 	public static final int GUI_ELECTRICFURNACE = 2;
+	public static final int GUI_CRUSHER = 3;
+	
+	public static final int ID_CABLE = 1;
+	public static final int ID_ELECTRICFURNACE = 2;
+	public static final int ID_TESTGENERATOR = 3;
+
 }

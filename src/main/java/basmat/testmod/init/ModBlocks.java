@@ -2,17 +2,20 @@ package basmat.testmod.init;
 
 import basmat.testmod.blocks.BlockBase;
 import basmat.testmod.blocks.block.TestBlock;
+import basmat.testmod.blocks.ore.CopperOre;
+import basmat.testmod.blocks.ore.LeadOre;
 import basmat.testmod.blocks.ore.LithiumOre;
 import basmat.testmod.blocks.ore.NickelOre;
 import basmat.testmod.blocks.ore.UraniumOre;
-import basmat.testmod.blocks.ore.CopperOre;
-import basmat.testmod.blocks.ore.LeadOre;
 import basmat.testmod.tileentities.TEInv.TestBlockTEInv;
 import basmat.testmod.tileentities.blockcounter.BlockCounter;
+import basmat.testmod.tileentities.crusher.BlockCrusher;
+import basmat.testmod.tileentities.crusher.TileEntityCrusher;
 import basmat.testmod.tileentities.electricfurnace.BlockElectricFurnace;
 import basmat.testmod.tileentities.electricfurnace.TileEntityElectricFurnace;
-import basmat.testmod.tileentities.energy.TETestEnergyGenerator;
-import basmat.testmod.tileentities.energy.BlockTestGenerator;
+import basmat.testmod.tileentities.generator.BlockTestGenerator;
+import basmat.testmod.tileentities.generator.TETestEnergyGenerator;
+import basmat.testmod.tileentities.pipe.EnergyNodeBlock;
 import basmat.testmod.util.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
@@ -33,7 +36,9 @@ public class ModBlocks
     public static TestBlockTEInv TestBlockTEInv = new TestBlockTEInv("TestBlockTEInv").setCreativeTab(CreativeTabs.MISC);
     public static final Block generator = new BlockTestGenerator("testgenerator").setCreativeTab(CreativeTabs.MISC);
     public static Block electricfurnace = new BlockElectricFurnace("electricfurnace");
-
+    public static EnergyNodeBlock energynode = new EnergyNodeBlock("energynode").setCreativeTab(CreativeTabs.MISC);
+    public static BlockCrusher crusher = new BlockCrusher("blockcrusher").setCreativeTab(CreativeTabs.BUILDING_BLOCKS);
+    
     public static void register(IForgeRegistry<Block> registry) {
         registry.registerAll(
                 counter,
@@ -45,14 +50,18 @@ public class ModBlocks
                 test_block,
                 TestBlockTEInv,
                 generator,
-                electricfurnace
+                electricfurnace,
+                energynode,
+                crusher
                 );
 
         GameRegistry.registerTileEntity(counter.getTileEntityClass(), counter.getRegistryName().toString());
         GameRegistry.registerTileEntity(TestBlockTEInv.getTileEntityClass(), TestBlockTEInv.getRegistryName().toString());
        
+        
         GameRegistry.registerTileEntity(TETestEnergyGenerator.class, new ResourceLocation(Reference.MOD_ID + ":testgenerator"));
         GameRegistry.registerTileEntity(TileEntityElectricFurnace.class, new ResourceLocation(Reference.MOD_ID + ":electricfurnace"));
+        GameRegistry.registerTileEntity(TileEntityCrusher.class, new ResourceLocation(Reference.MOD_ID + ":crusher"));
         System.out.println("Registration initalized.");
     }
 
@@ -67,7 +76,9 @@ public class ModBlocks
     			copperore.createItemBlock(),
     			TestBlockTEInv.createItemBlock(),
     			((BlockBase)generator).createItemBlock(),
-    			((BlockBase)electricfurnace).createItemBlock()
+    			((BlockBase)electricfurnace).createItemBlock(),
+    			energynode.createItemBlock(),
+    			crusher.createItemBlock()
     			);
         System.out.println("Registration for blocks complete");
     }
@@ -80,7 +91,7 @@ public class ModBlocks
         leadore.registerItemModel(Item.getItemFromBlock(leadore));
         counter.registerItemModel(Item.getItemFromBlock(counter));
         test_block.registerItemModel(Item.getItemFromBlock(test_block));
-        TestBlockTEInv.registerItemModel(Item.getItemFromBlock(TestBlockTEInv));
+        //TestBlockTEInv.registerItemModel(Item.getItemFromBlock(TestBlockTEInv));
         //generator.registerItemModel(Item.getItemFromBlock(generator));
         System.out.println("Registration for the models complete");
 

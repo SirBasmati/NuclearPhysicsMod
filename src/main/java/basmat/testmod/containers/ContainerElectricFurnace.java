@@ -3,7 +3,7 @@ package basmat.testmod.containers;
 import basmat.testmod.recipes.ElectricFurnaceRecipes;
 import basmat.testmod.tileentities.TEInv.TileEntityTestBlock;
 import basmat.testmod.tileentities.electricfurnace.TileEntityElectricFurnace;
-import basmat.testmod.tileentities.energy.TETestEnergyGenerator;
+import basmat.testmod.tileentities.generator.TETestEnergyGenerator;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
@@ -71,6 +71,7 @@ public class ContainerElectricFurnace extends Container{
 		Slot slot = inventorySlots.get(index);
 	
 		if (slot != null && slot.getHasStack()) {
+			int containerSlots = inventorySlots.size() - player.inventory.mainInventory.size();
 			ItemStack itemstack1 = slot.getStack();
 			itemstack = itemstack1.copy();
 	
@@ -95,7 +96,7 @@ public class ContainerElectricFurnace extends Container{
 				}
 
 			
-			} else if (!this.mergeItemStack(itemstack1, 4, 40, false)) {
+			} else if (!this.mergeItemStack(itemstack1, 4, 0, false)) {
 				return ItemStack.EMPTY;
 			}
 	
