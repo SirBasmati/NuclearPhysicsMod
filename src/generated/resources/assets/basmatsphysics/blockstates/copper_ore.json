@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "basmatsphysics:block/copper_ore"
+    }
+  }
+}

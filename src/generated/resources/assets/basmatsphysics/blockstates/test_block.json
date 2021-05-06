@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "basmatsphysics:block/test_block"
+    }
+  }
+}
